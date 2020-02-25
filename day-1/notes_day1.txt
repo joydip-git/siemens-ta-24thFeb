@@ -1,0 +1,150 @@
+C#/CSharp: OOP Language, case-sensitive, type-safe
+
+library:
+.NET Framework/Base Class Library (FCL/BCL)
+
+MS .NET Tools
+C:\Program Files (x86)\Microsoft SDKs\Windows\v10.0A\bin\NETFX 4.6.1 Tools
+
+Step-1:
+C# code compilation:
+
+tool: csc (CSharp Compiler)
+target (output file): *.exe/*.dll
+commands: 
+when target is exe output file (considering app has Main function)
+>csc /t:exe <file-name>.cs
+
+when target is library (dll) output file (considering app doesn't have Main function)
+>csc /t:library <file-name>.cs
+
+The output file is known as assembly (either executable or library assembly)
+executable assembly: standalone component
+library assembly: reusable component
+
+Tool to view any assembly: ILDASM
+Intermediate Language Dis-assembler
+
+Assembly components:
+1. IL Code
+2. Assembly Manifest => Info about application: name, dependency on other assembly, version, what type of module (exe or dll)
+3. Metainfo/Type Meatadata: Information about my code/types
+4. Resources (optional): information about external resources, such as image, audio, video file etc.
+5. Headers:
+   a. Windows 32 Header: what type of app, which OS files required
+   b. CLR Header: which framework version was used to create app
+
+Step-2: Running the application
+Common Language Runtime (CLR)
+
+assembly (IL Code) -- JIT compiler --> machine level code --> executes
+
+CLR: contains a runtime compiler, Just-in-Time,to convert IL code to machine level code
+starts exection from Main method
+allcocates memory block
+de-allocates memory block
+
+.NET Framework: environment for developing, building, deploying and running...
+a. BCL/FCL
+b. CLR
+c. ADO.NET
+d. ASP.NET
+
+Languages: Visual C#.NET, Visual Basic.NET, Visual C++.NET, etc....
+
+Editor: Visual Studio 20**, VS Code, Blend...
+
+
+
+data type
+------------------------------------------------
+built-in types
+
+byte (1 byte)  .... Byte
+sbyte (1 byte) .... SByte
+
+short (2 bytes).... Int16
+ushort (2 bytes)... UInt16
+
+int (4 bytes).......Int32
+uint (4 bytes)......UInt32
+
+long (8 bytes)......Int64
+ulong ( " ).........UInt64
+
+decimal (16) decimal x = 12.34M; ...Decimal
+float (8)    float y = 12.34F;   ...Float
+double (32)  double z = 12.34D/ 12.34;...Double
+
+char char ch = 'a';       ...Char
+bool  bool b = true/false;...Boolean
+
+DateTime  DateTime dt = new DateTime(24,2,2020);
+	  DateTime dtOld = new DateTime(23,2,2020);
+
+TimeSpan  TimeSpan ts = dt - dtOld;
+	  TimeSpan ts = dt.Subtract(dtOld);
+
+.NET Framework:
+Multi-lingual
+PE code
+interpoerability (iteroperable code) -- cross-language and cross-technology
+
+CTS: Common Type Specification
+CLS: Common Language Specification (subset of CTS)
+
+Library:
+source code file name: calculatorlib.cs
+namespace name: CalculationLogic
+class name: Calculation
+output file name (assembly): calculatorlib.dll
+
+Executable:
+source code file name: calculatorapp.cs
+namespace name: CalculatorUI
+class name: Calculator
+output file name (assembly): calculatorapp.exe
+
+
+1. OS calculates memory required in RAM to run that app and allocates the same by creating a process
+2. OS handles responsibility to a Host app (executable)
+   a. shim.exe
+   b. VS
+   c. web server (IIS/Tomcat...)
+3. Host app looks into the CLR Header of Assembly to find out the .NET Framework version
+4. Host App loads that apropriate CLR into the process memory space using a file mscorre.h (c++)
+5. Once the CLR is loaded into the process memory space...
+
+
+year	version		CLR
+2002	1.0		1.0
+2003	1.1		1.1
+2005	2.0		2.0
+2007	3.0		2.0
+2008	3.5		2.0
+2010	4		4.0
+2012	4.5		4.0
+2013	4.5.1/4.5.2	4.0
+2015	4.6.1		4.0
+2017	4.6.2		4.0
+2019	4.7.1/4.7.2	4.0
+
+.NET Core (2017)
+
+
+
+
+https://pastiebin.com/5e538bfe2946d
+
+mylibrary.data.cs
+
+https://github.com/joydip-git/siemens-ta-24feb
+
+
+
+
+
+
+
+
+
