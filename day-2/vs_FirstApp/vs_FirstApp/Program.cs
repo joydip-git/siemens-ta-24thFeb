@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CalculationLibrary;
 
 namespace vs_FirstApp
 {
@@ -13,15 +14,11 @@ namespace vs_FirstApp
         //static int Main(string[] args)
         static void Main()
         {
-            int result = Add(12, 13);
-            Console.WriteLine(result);
+            int result = Calculation.Add(12, 13);
+            Console.WriteLine(result);            
 
             Console.WriteLine("press any key to end...");
             Console.ReadLine();
-        }
-        static int Add(int firstValue, int secondValue)
-        {
-            return (firstValue + secondValue);
         }
     }
 }
