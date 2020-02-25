@@ -28,19 +28,33 @@ namespace vs_FirstApp
             int choice = int.Parse(value);
             return choice;
         }
-        static int GetValue()
+        static void Assign(out int value)
         {
-            Console.Write("\nEnter 1st Value: ");
+            Console.Write("\nEnter Value: ");
             string val = Console.ReadLine();
-            int number = int.Parse(val);
-            return number;
+            value = int.Parse(val);
+        }
+        static void GetValue(out int first, out int second)
+        {
+            Assign(out first);
+            Assign(out second);
         }
         static void Main()
         {
             PrintMenu();
             int operationChoice = GetChoice();
 
-            
+            int firstValue;
+            int secondValue;
+            GetValue(out firstValue, out secondValue);
+
+            string str = "abcd";
+            int value;
+            bool possible = int.TryParse(str, out value);
+            if(possible)
+                Console.WriteLine($"possible...value: {value}");
+            else
+                Console.WriteLine("not possible");
 
             Console.WriteLine("press any key to end...");
             Console.ReadLine();
