@@ -15,6 +15,9 @@ namespace vs_FirstApp
         {
             int result = Add(12, 13);
             Console.WriteLine(result);
+
+            Console.WriteLine("press any key to end...");
+            Console.ReadLine();
         }
         static int Add(int firstValue, int secondValue)
         {
