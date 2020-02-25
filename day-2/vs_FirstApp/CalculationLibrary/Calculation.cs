@@ -21,10 +21,13 @@
         /// </summary>
         /// <param name="firstValue">first number</param>
         /// <param name="secondValue">second number</param>
-        /// <returns>returns the subtraction result (an integer value)</returns>
+        /// <returns>returns the positive subtraction result (an integer value)</returns>
         public static int Subtract(int firstValue, int secondValue)
         {
-            return (firstValue - secondValue);
+            if (firstValue > secondValue)
+                return (firstValue - secondValue);
+            else
+                return (secondValue - firstValue);
         }
 
         /// <summary>
@@ -46,7 +49,13 @@
         /// <returns>returns the division result (an integer value)</returns>
         public static int Divide(int firstValue, int secondValue)
         {
-            return (firstValue / secondValue);
+            if (secondValue > 0)
+                if (firstValue > secondValue)
+                    return (firstValue / secondValue);
+                else
+                    return secondValue / firstValue;
+            else
+                return 0;
         }
     }
 }

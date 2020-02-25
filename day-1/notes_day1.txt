@@ -56,13 +56,14 @@ Editor: Visual Studio 20**, VS Code, Blend...
 
 
 
-data type
-------------------------------------------------
-built-in types
-
-byte (1 byte)  .... Byte
-sbyte (1 byte) .... SByte
-
+		data types
+-----------------------------------------------------
+	value type		reference type
+built-in       user-defined  built-in	user-defined
+		struct			  class
+byte (1 byte)  .... Byte	string
+sbyte (1 byte) .... SByte	object
+				array
 short (2 bytes).... Int16
 ushort (2 bytes)... UInt16
 
