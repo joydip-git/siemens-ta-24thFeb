@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using CalculationLibrary;
+﻿using CalculationLibrary;
+using System;
+using vs_FirstApp.Models;
 
 namespace vs_FirstApp
 {
@@ -21,48 +18,76 @@ namespace vs_FirstApp
             Console.WriteLine("3. Multiply");
             Console.WriteLine("4. Divide");
         }
-        
-        static int GetChoice()
+
+        static int GetUserChoice()
         {
             Console.Write("\nEnter a choice[1/2/3/4]: ");
             string value = Console.ReadLine();
             int choice = int.Parse(value);
             return choice;
         }
-        
+
+        static OperationType ConvertUserChoice(int userChoice)
+        {
+            OperationType operationType;
+            switch (userChoice)
+            {
+                case 1:
+                    operationType = OperationType.Add;
+                    break;
+
+                case 2:
+                    operationType = OperationType.Subtract;
+                    break;
+
+                case 3:
+                    operationType = OperationType.Multiply;
+                    break;
+
+                case 4:
+                    operationType = OperationType.Divide;
+                    break;
+
+                default:
+                    operationType = OperationType.Add;
+                    break;
+            }
+            return operationType;
+        }
+
         static void Assign(out int value)
         {
             Console.Write("\nEnter Value: ");
             string val = Console.ReadLine();
             value = int.Parse(val);
         }
-        
+
         static void GetValue(out int first, out int second)
         {
             Assign(out first);
             Assign(out second);
         }
-        
-        static void InvokeOperation(int operationChoice, int firstValue, int secondValue)
+
+        static void InvokeOperation(OperationType operationChoice, int firstValue, int secondValue)
         {
             switch (operationChoice)
             {
-                case 1:
+                case OperationType.Add:
                     int addResult = Calculation.Add(firstValue, secondValue);
                     Console.WriteLine($"\naddition of {firstValue} and {secondValue} is {addResult}");
                     break;
 
-                case 2:
+                case OperationType.Subtract:
                     int subtractionResult = Calculation.Subtract(firstValue, secondValue);
                     Console.WriteLine($"\nsubtraction of {firstValue} and {secondValue} is {subtractionResult}");
                     break;
 
-                case 3:
+                case OperationType.Multiply:
                     int multiplicationResult = Calculation.Multiply(firstValue, secondValue);
                     Console.WriteLine($"\nmultiplication of {firstValue} and {secondValue} is {multiplicationResult}");
                     break;
 
-                case 4:
+                case OperationType.Divide:
                     int divisionResult = Calculation.Divide(firstValue, secondValue);
                     Console.WriteLine($"\ndivision of {firstValue} and {secondValue} is {divisionResult}");
                     break;
@@ -72,7 +97,7 @@ namespace vs_FirstApp
                     break;
             }
         }
-        
+
         static void ChangeDecision(ref char decision)
         {
             Console.Write("\nWould you like to continue?[y/Y]: ");
@@ -82,14 +107,15 @@ namespace vs_FirstApp
                 decision = char.ToLower(decision);
             }
         }
-        
+
         static void Main()
         {
             char decision = 'n';
             do
             {
                 PrintMenu();
-                int operationChoice = GetChoice();
+                int userChoice = GetUserChoice();
+                OperationType operationChoice = ConvertUserChoice(userChoice);
 
                 int firstValue;
                 int secondValue;
@@ -102,7 +128,6 @@ namespace vs_FirstApp
 
             Console.WriteLine("press any key to end...");
             Console.ReadLine();
-        }
-
+        }        
     }
 }
