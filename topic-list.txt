@@ -1,0 +1,110 @@
+1. .NET Framework
+	a. Base/Framework class library
+	b. Common Language Runtime (CLR)
+	c. ADO.NET
+	d. ASP.NET
+2. Advantages:
+	a. Multi-lingual
+	b. PE code
+	c. inter-operability
+	d. Platform neutrality
+3. Execution Cycle:
+	step-1:
+	a. Source code gets compiled to IL code with the help of language specific compiler
+	b. produces Assembly (exe/dll) - standalone or reusable (PE file)
+	c. commands: csc /t:exe <file-name>.cs
+		     csc /t:library <file-name>.cs
+			/r: lib-name.dll
+	step-2:
+	a. CLR gets loaded in proces smemor space
+	b. Il code gets converted to machine language code using JIT compiler
+	c. execution starts from Main method
+
+4. Assembly components:
+	a. Manifest
+	b. Metainfo/Type Metadata
+	c. IL Code
+	d. Resources (optional)
+	e. Headers
+		i. Win32 Header (optional): what type of app, some OS dlls information
+		ii. CL Header: framework version, digital signature
+	
+5. C#
+	a. data types
+		i. value type:
+			A. built-in: int, long, decimal etc.
+			B. user-defined: struct, enum
+		ii. reference type: 
+			A. bulit-in: string, object, array etc.
+			B. user-defined: class, interface, delegate, event
+
+6. statements:
+	a. if..else
+	b. while
+	c. do..while
+	d. switch...case
+	e. for
+	f. foreach
+	g. break;
+	h. continue
+
+7. operators:
+	usage:
+	a. arithmatic: +, -, *, /, %
+	b. logical: || and &&
+	c. euqality: ==, !=, >, <, >=, <=
+	
+	operands:
+	a. unary: ++, --
+	b. binary: +, - etc.
+	c. ternary: ?:
+
+	int a =10;
+	a++; // a= a+1;
+	a--; //a = a-1;
+
+	int b= 20;
+	int c = a > b ? a : b;
+
+8. passing arguments to methods and keywords:
+	a. pass by value: no keyword
+	b. pass by reference: ref keyword
+	c. pass by out: out keyword
+
+note: local variables (to a method) doesn't have any default value in C#
+
+	difference:
+	1.
+	pass by value and ref doesn't work if the variable is not assigned a value
+	pass by out allows a variable to be passed to a method without being assigned any value to it.
+	2.
+	in the called method, a variable passed by value or by ref CAN be assigned a new value
+	in the called method, a variable passed by out, MUST be assigned
+	
+
+	d. named arguments: no keyword
+	e. optional argument with default value: no keyword
+
+9. enum:
+	a. how to declare
+	b. how to change data type of enum member value
+	c. how to initialize a enum member with random value
+	d. how to declare a variable of enum type
+	e. how to assign value to enum variable
+	f. how to display the enum variable and it's hidden value
+	g. how to use enum in switch...case
+
+
+
+
+
+New Features:
+	a. string interpolation: $"{<variable>}" (v4.6 - 2015, C# 6.0)
+	b. optional argument with default value (v4.0 - 2010)
+	c. named arguments (v4.0-2010)
+
+
+
+
+
+
