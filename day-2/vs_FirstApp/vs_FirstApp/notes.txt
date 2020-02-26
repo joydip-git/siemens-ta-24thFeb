@@ -1,0 +1,7 @@
+﻿            string str = Console.ReadLine();
+            DateTime value;// = DateTime.Parse(str);
+            bool possible = DateTime.TryParse(str, out value);
+            if(possible)
+                Console.WriteLine($"possible...value: {value}");
+            else
+                Console.WriteLine("not possible");
