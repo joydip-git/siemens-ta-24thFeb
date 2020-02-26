@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using StructandEnumDemo.Structures;
+using StructandEnumDemo.Enums;
+
 namespace StructandEnumDemo
 {
     class Program
     {
-        static void Main()
+        static void TestEnum()
         {
             Console.Write("name: ");
             string name = Console.ReadLine();
@@ -55,8 +58,30 @@ namespace StructandEnumDemo
                     break;
             }
 
-            Console.BackgroundColor = ConsoleColor.Blue;
-            Console.WriteLine("hi...");
+        }
+        static void Main()
+        {
+            TestEnum();
+            //Console.BackgroundColor = ConsoleColor.Blue;
+            //Console.WriteLine("hi...");
+
+            //double margin_left = 12.34;
+            //double margin_right = 56.70;
+            //double margin_top = 56.70;
+            //double margin_bottom = 56.70;
+
+            Margin marginOfTextBox;
+            marginOfTextBox.margin_bottom = 12;
+            marginOfTextBox.margin_left = 30;
+            marginOfTextBox.margin_right = 40;
+            marginOfTextBox.margin_top = 50;
+
+            Margin marginOfButton;
+            marginOfButton.margin_bottom = 20;
+            marginOfButton.margin_left = 45;
+            marginOfButton.margin_right = 68;
+            marginOfButton.margin_top = 90;
+
         }
     }
 }
