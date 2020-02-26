@@ -102,6 +102,7 @@ New Features:
 	a. string interpolation: $"{<variable>}" (v4.6 - 2015, C# 6.0)
 	b. optional argument with default value (v4.0 - 2010)
 	c. named arguments (v4.0-2010)
+	d. static import
 
 
 
