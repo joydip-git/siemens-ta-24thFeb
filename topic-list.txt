@@ -94,7 +94,12 @@ note: local variables (to a method) doesn't have any default value in C#
 	f. how to display the enum variable and it's hidden value
 	g. how to use enum in switch...case
 
+10. struct (structure)
 
+11. array
+
+12. OOP:
+	a. class
 
 
 
@@ -102,7 +107,13 @@ New Features:
 	a. string interpolation: $"{<variable>}" (v4.6 - 2015, C# 6.0)
 	b. optional argument with default value (v4.0 - 2010)
 	c. named arguments (v4.0-2010)
-	d. static import
+	d. static import: 
+	syntax:
+	using static <namespace>.<static-class-name>;
+	use:
+	Now you can use all the static members of the static class in your code without mentioning the class name
+	Rule: static import is possible if the class is declared with static keyword
+	
 
 
 
