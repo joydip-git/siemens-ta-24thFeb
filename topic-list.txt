@@ -99,7 +99,7 @@ note: local variables (to a method) doesn't have any default value in C#
 11. array
 
 12. OOP:
-	a. class
+	a. class: blueprint to create instances
 		access specifiers:
 		public and internal (default)
 
@@ -110,6 +110,51 @@ note: local variables (to a method) doesn't have any default value in C#
 	ii. methods
 		access specifiers:
 		public, internal, protected, private (default), protected internal
+
+	b. object: real time entity, created based on class blueprint. Memory allocation is in the heap memory block, reference to it is stored in stack.
+
+	c. encapsulation:technique of putting data and functionality together in a class
+
+	d. data abstraction: hiding the data members inside the class by using the access specifier
+
+	e. functional abstarction: hiding the implementation of a method (NOT the method itself) inside a class
+
+	f. constructor: a special function inside a class, which is used to assign values (either default or user defined) to data members during object creation (NOT afetr OR before)
+	Note:
+	1. job: assign default values
+        2. timing: during object creation
+        3. characterestics:
+        	1. no return type
+        	2. name of this method is same as that of the class
+	        3. can be default (assigns default values) and parameterized (can assign user values)
+		4. default constructor is supplied by compiler (compilation time) when there is no constructor written inside the class explicitly
+		5. parameterized constructor is not supplied by compiler
+
+	g. Property: an encapsulator for methods to assign value to data member of class and return value of the data member from class. also known as property function
+	Note:
+	1. contains two types of accessors: get and set
+	2. can have both or either of them at a time
+	If contains only set accessor: write-only property
+	If contains only get accessor: read-only property
+	3. after creation of object, at a time one property will be called and single value can be passed or returned
+	4. invoked like data member, NOT like a method
+	5. way of encapsulating data member
+	6. old style:
+		public <data-type> <Property-name>
+		{
+			set { <data-member> = value; }
+			get { return <data-member>; }
+		}
+		[value is auto-declared variable local ONLY to set accessor. not even available in get accessor]
+	7. new style:(2017 VS onward)
+		public <data-type> <Property-name>
+		{
+			set => <data-member> = value; 
+			get => <data-member>; 
+		}
+
+	
+		
 
 
 

@@ -1,14 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using EMS.Entities;
+﻿using EMS.Entities;
+using System;
 
 namespace EMS.UserInterface
 {
     class Program
     {
+        /// <summary>
+        /// Method to accept values for an employee from user and create an object based on that data
+        /// </summary>
+        /// <returns>
+        /// returns reference of the Employee class object
+        /// </returns>
         static Employee AcceptValuesandCreateObject()
         {
             Console.Write("Name: ");
@@ -26,24 +28,37 @@ namespace EMS.UserInterface
             Console.Write("Hra Payment: ");
             decimal hra = decimal.Parse(Console.ReadLine());
 
-            Employee anilObjectRef = new Employee();
-            anilObjectRef.Assign(empId: id, empName: name, hraPay: hra, daPay: da, basicPay: basic);           
-            return anilObjectRef;
+            //Employee anilObjectRef = new Employee(employeeId: id, employeeName: name, hraPayment: hra, daPayment: da, basicPayment: basic, projectName: null);
+            Employee objectReference = new Employee(employeeId: id, employeeName: name, hraPayment: hra, daPayment: da, basicPayment: basic);
+                   
+            return objectReference;
         }
         static void Main()
         {
-            Employee anilRef = AcceptValuesandCreateObject();
-            PrintSalary(anilRef);
-            //string str = "siemens";
+            //calling a method to accept user values and create object of employee class
+            Employee employeeReference = AcceptValuesandCreateObject();
+            
+            //setting project name for the employee
+            employeeReference.ProjectName = "SITA";
 
-
-            //Employee sunilObjRef = new Employee();
-            //sunilObjRef.CalculateSalary();
+            //calling method to print salary
+            PrintSalary(employeeReference);
         }
-        static void PrintSalary(Employee anil)
+
+        /// <summary>
+        /// Prints salary of an employee
+        /// </summary>
+        /// <param name="employee">
+        /// refernce of an employee whose salary has to be calculated
+        /// </param>
+        static void PrintSalary(Employee employee)
         {
-            decimal totalSal = anil.CalculateSalary();
-            Console.WriteLine(totalSal);
+            //calling method to calculate salary
+            decimal totalSal = employee.CalculateSalary();
+            //Console.WriteLine($"{ anil.GetEmployeeName()} has salary of {totalSal}");
+
+            //printing the name along with total salary of an employee
+            Console.WriteLine($"{ employee.EmployeeName} has salary of {totalSal}");
         }
     }
 }
