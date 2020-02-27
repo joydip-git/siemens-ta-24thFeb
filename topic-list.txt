@@ -100,6 +100,16 @@ note: local variables (to a method) doesn't have any default value in C#
 
 12. OOP:
 	a. class
+		access specifiers:
+		public and internal (default)
+
+	i. data members:
+		access specifiers:
+		public, internal, protected, private (default), protected internal
+
+	ii. methods
+		access specifiers:
+		public, internal, protected, private (default), protected internal
 
 
 
