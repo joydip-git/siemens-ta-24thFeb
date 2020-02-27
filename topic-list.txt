@@ -153,9 +153,6 @@ note: local variables (to a method) doesn't have any default value in C#
 			get => <data-member>; 
 		}
 
-	
-		
-
 
 
 New Features:
