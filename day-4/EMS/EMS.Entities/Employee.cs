@@ -102,7 +102,7 @@
         /// <returns>
         /// returns calculated total salary
         /// </returns>
-        public decimal CalculateSalary()
+        public virtual decimal CalculateSalary()
         {
             decimal total = this.basicPayment + daPayment + hraPayment;
             return total;
