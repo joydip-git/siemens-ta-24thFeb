@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.Entities", "EMS.Entitie
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.UserInterface", "EMS.UserInterface\EMS.UserInterface.csproj", "{0EAC4BAD-AA6D-4D1A-B813-22B7FD0C9F2B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EMS.PayrollClient", "EMS.PayrollClient\EMS.PayrollClient.csproj", "{D2270AC5-2834-41C5-B3CC-7CC1E0091317}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0EAC4BAD-AA6D-4D1A-B813-22B7FD0C9F2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EAC4BAD-AA6D-4D1A-B813-22B7FD0C9F2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0EAC4BAD-AA6D-4D1A-B813-22B7FD0C9F2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2270AC5-2834-41C5-B3CC-7CC1E0091317}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2270AC5-2834-41C5-B3CC-7CC1E0091317}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2270AC5-2834-41C5-B3CC-7CC1E0091317}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2270AC5-2834-41C5-B3CC-7CC1E0091317}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
