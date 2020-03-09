@@ -18,8 +18,6 @@ namespace OutstandingPersonApp.Entities
     }
     abstract class Child : Test
     {
-
-
         public override void Print()
         {
 
