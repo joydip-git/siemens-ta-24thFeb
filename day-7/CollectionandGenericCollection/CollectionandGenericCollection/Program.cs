@@ -4,13 +4,6 @@ using System.Collections.Generic;
 
 namespace CollectionandGenericCollection
 {
-    //test method id
-    //test method name
-    //test method run time
-    //test method run duration
-    //test class name to which this method belongs
-    //status of test method run
-
     class Program
     {
         static void ArrayListDemo()
