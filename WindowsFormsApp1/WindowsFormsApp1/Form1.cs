@@ -16,5 +16,11 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2("joydip");
+            frm.Show();
+        }
     }
 }

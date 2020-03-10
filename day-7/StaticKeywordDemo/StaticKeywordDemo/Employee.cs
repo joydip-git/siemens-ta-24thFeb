@@ -17,8 +17,12 @@ namespace StaticKeywordDemo
         static decimal joiningBonus;// = 1000;
         public const decimal YEARLYBONUS = 2000;
 
+        //no access specifier
+        //no overloading (no parameterization)
+        //it is not called explicitly (neither from within the class nor from outside the class)
+        //it gets called only one time, the very first time you create an instance or you access a static member
         static Employee()
-        {            
+        {
             joiningBonus = 1000;
             //YEARLYBONUS = 2000;
             Console.WriteLine($"joining bonus: {joiningBonus}");
@@ -28,8 +32,7 @@ namespace StaticKeywordDemo
         {
 
         }
-
-        public Employee(string name, int id, decimal basicPay, decimal daPay, decimal hraPay)
+        public Employee(string name, int id, decimal basicPay, decimal daPay, decimal hraPay) : this()
         {
             this.name = name;
             this.id = id;

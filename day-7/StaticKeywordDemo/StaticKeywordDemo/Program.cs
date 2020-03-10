@@ -2,17 +2,13 @@
 
 namespace StaticKeywordDemo
 {
-    class Calculation
-    {
-        public static int Add(int x, int y)
-        {
-            return (x + y);
-        }
-    }
     class Program
     {
         static void Main()
         {
+            Console.WriteLine(Employee.YEARLYBONUS);
+            Console.WriteLine(Employee.JoiningBonus);
+            /*
             Employee emp1 = new Employee("joy", 1, 1000, 1000, 1000);
             Employee emp2 = new Employee("anil", 2, 2000, 2000, 2000);
 
@@ -21,6 +17,7 @@ namespace StaticKeywordDemo
 
             Console.WriteLine(Employee.JoiningBonus);
             Console.WriteLine(Employee.YEARLYBONUS);
+            */
         }
     }
 }
