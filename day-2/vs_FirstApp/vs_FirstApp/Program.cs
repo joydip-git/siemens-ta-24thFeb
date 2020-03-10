@@ -3,10 +3,12 @@ using vs_FirstApp.Utility;
 using vs_FirstApp.Models;
 //static import
 using static vs_FirstApp.Utility.CalculatorUtility;
+using static vs_FirstApp.Utility.A;
 //using vs_FirstApp.Utility;
 
 namespace vs_FirstApp
 {
+    
     class Program
     {
         //static void Main(string[] args)
@@ -17,7 +19,7 @@ namespace vs_FirstApp
             char decision = 'n';
             do
             {
-                PrintMenu();
+                CalculatorUtility.PrintMenu();
                 int userChoice = GetUserChoice();
                 OperationType operationChoice = ConvertUserChoice(userChoice);
 

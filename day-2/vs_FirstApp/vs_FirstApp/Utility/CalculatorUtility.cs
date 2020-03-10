@@ -9,6 +9,10 @@ using CalculationLibrary;
 
 namespace vs_FirstApp.Utility
 {
+    static class A
+    {
+        public static void PrintMenu() { }
+    }
     static class CalculatorUtility
     {
         public static void PrintMenu()
