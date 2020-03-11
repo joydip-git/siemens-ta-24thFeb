@@ -1,4 +1,4 @@
-﻿namespace Implementation
+﻿namespace Implementation.View
 {
     partial class EmployeeDetailsForm
     {

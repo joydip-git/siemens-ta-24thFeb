@@ -17,7 +17,7 @@ namespace Implementation
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             
-            OperationMenuForm operationMenu = new OperationMenuForm();
+            View.OperationMenuForm operationMenu = new View.OperationMenuForm();
             Application.Run(operationMenu);
         }
     }
