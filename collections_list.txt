@@ -1,0 +1,42 @@
+interfaces:
+--------------------------------------------------
+System.Collections	System.Collections.Generic
+---------------------------------------------------
+IEnumerable		IEnumerable<T>
+ICollection		ICollection<T>
+IList			IList<T>
+	(sorting)
+IComparer		IComparer<T>
+		(system namespace - sorting)
+IComparable		IComparable<T>
+
+....................................................
+ArrayList		List<T>
+-----			HashSet<T>
+
+Stack			Stack<T>
+Queue			Queue<T>
+
+HashTable		Dictionary<TK,TV>
+SortedList		SortedList<TK,TV>
+		(for iteration)
+DictionaryEntry (s)     KeyValuePair<TK,TV> (s)
+
+
+
+			
+
+public interface IEnumerable/IEnumerable<T>
+{
+	IEnumertaor GetEnumerator();/
+	IEnumerator<T> GetEnumerator();
+}
+public interface ICollection
+:IEnumerable
+{
+
+}
+
+
+
+
