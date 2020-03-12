@@ -20,7 +20,7 @@
         }
         public override int GetHashCode()
         {
-            return DepartmentId.GetHashCode();
+            return DepartmentId.GetHashCode()*DepartmentName.GetHashCode();
         }
         public override bool Equals(object obj)
         {

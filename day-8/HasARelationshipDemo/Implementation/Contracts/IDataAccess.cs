@@ -5,7 +5,7 @@ namespace Implementation.Contracts
     public interface IDataAccess<T>
     {
         bool Add(T item);
-        List<T> GetAll();
-        List<T> GetById(int id);
+        ICollection<T> GetAll();
+        ICollection<T> GetById(int id);
     }
 }

@@ -11,33 +11,34 @@ namespace Implementation.DAL
 {
     public class EmployeeDataAccessObject : IDataAccess<Employee>
     {
-        public List<Employee> GetAll()
+        public ICollection<Employee> GetAll()
         {
             return DataRepository.GetEmployees();
         }
         public bool Add(Employee employee)
         {
-            var employees = DataRepository.GetEmployees();
+            var employees = DataRepository.GetEmployees() as HashSet<Employee>;
             bool exists = false;
+            exists = employees.Add(employee);
+            return exists;
+            //if (employees != null && employees.Count > 0)
+            //{
+            //    foreach (var item in employees)
+            //    {
+            //        if (item.EmployeeId == employee.EmployeeId)
+            //        {
+            //            exists = true;
+            //            break;
+            //        }
+            //    }
+            //}
 
-            if (employees != null && employees.Count > 0)
-            {
-                foreach (var item in employees)
-                {
-                    if (item.EmployeeId == employee.EmployeeId)
-                    {
-                        exists = true;
-                        break;
-                    }
-                }
-            }
+            //if (!exists)
+            //    employees.Add(employee);
 
-            if (!exists)
-                employees.Add(employee);
-
-            return !exists;
+            //return !exists;
         }
-        public List<Employee> GetById(int departmentId)
+        public ICollection<Employee> GetById(int departmentId)
         {
             var employees = DataRepository.GetEmployees();
             List<Employee> found = null;

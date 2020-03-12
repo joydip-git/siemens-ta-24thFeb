@@ -5,19 +5,19 @@ namespace Implementation.Repository
 {
     public static class DataRepository
     {
-        private static List<Department> departments;
-        private static List<Employee> employees;
+        private static HashSet<Department> departments;
+        private static HashSet<Employee> employees;
 
         static DataRepository()
         {
-            departments = new List<Department>();
-            employees = new List<Employee>();
+            departments = new HashSet<Department>();
+            employees = new HashSet<Employee>();
         }
-        public static List<Department> GetDepartments()
+        public static ICollection<Department> GetDepartments()
         {
             return departments;
         }
-        public static List<Employee> GetEmployees()
+        public static ICollection<Employee> GetEmployees()
         {
             return employees;
         }
