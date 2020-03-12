@@ -46,7 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IDataAccess.cs" />
     <Compile Include="DAL\DepartmentDataAccessObject.cs" />
+    <Compile Include="DAL\EmployeeDataAccessObject.cs" />
+    <Compile Include="IOC\DataAccessObjectProvider.cs" />
+    <Compile Include="Models\Employee.cs" />
     <Compile Include="View\DepartmentDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +85,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\DataRepository.cs" />
+    <EmbeddedResource Include="View\DepartmentDetailsForm.resx">
+      <DependentUpon>DepartmentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\DepartmentEntryForm.resx">
       <DependentUpon>DepartmentEntryForm.cs</DependentUpon>
     </EmbeddedResource>

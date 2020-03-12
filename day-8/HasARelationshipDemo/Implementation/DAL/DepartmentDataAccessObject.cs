@@ -1,14 +1,11 @@
-﻿using Implementation.Models;
+﻿using Implementation.Contracts;
+using Implementation.Models;
 using Implementation.Repository;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Implementation.DAL
 {
-    public class DepartmentDataAccessObject
+    public class DepartmentDataAccessObject : IDataAccess<Department>
     {
         public bool Add(Department department)
         {
@@ -31,6 +28,16 @@ namespace Implementation.DAL
                 departments.Add(department);
 
             return !exists;
+        }
+
+        public List<Department> GetAll()
+        {
+            return DataRepository.GetDepartments();
+        }
+
+        public List<Department> GetById(int id)
+        {
+            return null;
         }
     }
 }

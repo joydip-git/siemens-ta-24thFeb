@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Implementation.DAL;
+using Implementation.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +26,43 @@ namespace Implementation.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            
+            int id = int.Parse(textBoxId.Text);
+            string name = textBoxName.Text;
+            decimal salary = decimal.Parse(textBoxSalary.Text);
+            Department selectedDepartment = comboBoxDepartments.SelectedItem as Department;
+
+            Employee employee = new Employee
+            {
+                EmployeeId = id,
+                EmployeeName = name,
+                Salary = salary,
+                DepartmentInfo = selectedDepartment
+            };
+
+            EmployeeDataAccessObject employeeDao = new EmployeeDataAccessObject();
+            bool status = employeeDao.Add(employee);
+            if (status)
+                MessageBox.Show("employee record added successfully");
+            else
+                MessageBox.Show("employee record not added");
+            Reset();
+        }
+
+        private void Reset()
+        {
+            textBoxId.Text = "";
+            textBoxName.Text = "";
+            textBoxSalary.Text = "";
+        }
+
+        private void EmployeeEntryForm_Load(object sender, EventArgs e)
+        {
+            DepartmentDataAccessObject departmentDao =
+                new DepartmentDataAccessObject();
+            var departments = departmentDao.GetAll();
+
+            comboBoxDepartments.DataSource = departments;
+            comboBoxDepartments.DisplayMember = "DepartmentName";
         }
     }
 }
