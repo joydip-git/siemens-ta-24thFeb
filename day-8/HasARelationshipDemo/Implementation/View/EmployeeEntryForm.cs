@@ -61,7 +61,7 @@ namespace Implementation.View
                 new DepartmentDataAccessObject();
             var departments = departmentDao.GetAll();
 
-            comboBoxDepartments.DataSource = departments;
+            comboBoxDepartments.DataSource = departments.ToList<Department>();
             comboBoxDepartments.DisplayMember = "DepartmentName";
         }
     }
