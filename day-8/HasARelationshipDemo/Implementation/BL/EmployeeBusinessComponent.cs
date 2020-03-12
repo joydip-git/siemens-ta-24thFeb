@@ -1,25 +1,34 @@
 ﻿using Implementation.Contracts;
+using Implementation.DAL;
 using Implementation.Models;
-using System;
 using System.Collections.Generic;
 
 namespace Implementation.BL
 {
     public class EmployeeBusinessComponent : IBusinessComponent<Employee>
     {
+        private EmployeeDataAccessObject employeeDao;
+
+        public EmployeeBusinessComponent()
+        {
+            employeeDao = new EmployeeDataAccessObject();
+        }
         public bool AddRecord(Employee item)
         {
-            throw new NotImplementedException();
+            if (item != null)
+                return employeeDao.Add(item);
+            else
+                return false;
         }
 
         public ICollection<Employee> GetRecordById(int id)
         {
-            throw new NotImplementedException();
+            return employeeDao.GetById(id);
         }
 
         public ICollection<Employee> GetRecords()
         {
-            throw new NotImplementedException();
+            return employeeDao.GetAll();
         }
 
         public ICollection<Employee> SortRecords(ICollection<Employee> collection, EmployeeSortChoice choice)

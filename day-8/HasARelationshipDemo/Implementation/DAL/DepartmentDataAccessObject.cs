@@ -2,6 +2,7 @@
 using Implementation.Models;
 using Implementation.Repository;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Implementation.DAL
 {
@@ -11,29 +12,13 @@ namespace Implementation.DAL
         {
             var departments = DataRepository.GetDepartments() as HashSet<Department>;
             bool exists = false;
-            exists = departments.Add(department);
-            //if (departments != null && departments.Count > 0)
-            //{
-            //    foreach (var d in departments)
-            //    {
-            //        if (d.DepartmentId == department.DepartmentId)
-            //        {
-            //            exists = true;
-            //            break;
-            //        }
-            //    }
-            //}
-
-            //if (!exists)
-            //    departments.Add(department);
-
-            //return !exists;
+            exists = departments.Add(department);           
             return exists;
         }
 
         public ICollection<Department> GetAll()
         {
-            return DataRepository.GetDepartments();
+            return DataRepository.GetDepartments().ToList<Department>();
         }
 
         public ICollection<Department> GetById(int id)

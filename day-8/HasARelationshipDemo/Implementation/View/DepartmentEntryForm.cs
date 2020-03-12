@@ -1,4 +1,4 @@
-﻿using Implementation.DAL;
+﻿using Implementation.BL;
 using Implementation.Models;
 using System;
 using System.Collections.Generic;
@@ -51,9 +51,10 @@ namespace Implementation.View
                 DepartmentId = id,
                 DepartmentName = name
             };
-            DepartmentDataAccessObject departmentDao
-                = new DepartmentDataAccessObject();
-            bool status = departmentDao.Add(department);
+            DepartmentBusinessComponent departmentBo
+                = new DepartmentBusinessComponent();
+
+            bool status = departmentBo.AddRecord(department);
             if (status)
                 MessageBox.Show("department record added");
             else

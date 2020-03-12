@@ -2,14 +2,20 @@
 using Implementation.Models;
 using System;
 using System.Collections.Generic;
+using Implementation.DAL;
 
 namespace Implementation.BL
 {
     public class DepartmentBusinessComponent : IBusinessComponent<Department>
     {
-        public bool AddRecord(Department item)
+        private DepartmentDataAccessObject departmentDao;
+        public DepartmentBusinessComponent()
         {
-            throw new NotImplementedException();
+            departmentDao = new DepartmentDataAccessObject();
+        }
+        public bool AddRecord(Department item)
+        {            
+            return departmentDao.Add(item);
         }
 
         public ICollection<Department> GetRecordById(int id)
@@ -19,7 +25,10 @@ namespace Implementation.BL
 
         public ICollection<Department> GetRecords()
         {
-            throw new NotImplementedException();
+            return departmentDao.GetAll();
+            //var list = departmentDao.GetAll() as List<Department>;
+            //list.Sort();
+            //return list;
         }
 
         public ICollection<Department> SortRecords(ICollection<Department> collection, EmployeeSortChoice choice)

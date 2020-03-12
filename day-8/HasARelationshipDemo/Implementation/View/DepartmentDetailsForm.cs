@@ -1,5 +1,4 @@
-﻿using Implementation.DAL;
-using Implementation.IOC;
+﻿using Implementation.IOC;
 using Implementation.Models;
 using Implementation.BL;
 
@@ -24,14 +23,14 @@ namespace Implementation.View
 
         private void DepartmentDetailsForm_Load(object sender, EventArgs e)
         {
-            DataAccessObjectProvider provider
-                = new DataAccessObjectProvider();
+            //DataAccessObjectProvider provider
+            //    = new DataAccessObjectProvider();
             //provider.Create();
-            DepartmentDataAccessObject departmentDao
-                = new DepartmentDataAccessObject();
-            var departments = departmentDao.GetAll();
+            DepartmentBusinessComponent departmentBo
+                = new DepartmentBusinessComponent();
+            var departments = departmentBo.GetRecords();
 
-            comboBoxDepartments.DataSource = departments.ToList<Department>();
+            comboBoxDepartments.DataSource = departments;
             comboBoxDepartments.DisplayMember = "DepartmentName";
         }
 
@@ -41,8 +40,9 @@ namespace Implementation.View
 
             if (selectedDepartment != null)
             {
-                EmployeeDataAccessObject employeeDao = new EmployeeDataAccessObject();
-                var list = employeeDao.GetById(selectedDepartment.DepartmentId);
+                EmployeeBusinessComponent employeeDao
+                    = new EmployeeBusinessComponent();
+                var list = employeeDao.GetRecordById(selectedDepartment.DepartmentId);
 
                 if (list != null && list.Count > 0)
                 {

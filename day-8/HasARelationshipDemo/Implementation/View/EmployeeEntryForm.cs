@@ -1,4 +1,4 @@
-﻿using Implementation.DAL;
+﻿using Implementation.BL;
 using Implementation.Models;
 using System;
 using System.Collections.Generic;
@@ -39,8 +39,8 @@ namespace Implementation.View
                 DepartmentInfo = selectedDepartment
             };
 
-            EmployeeDataAccessObject employeeDao = new EmployeeDataAccessObject();
-            bool status = employeeDao.Add(employee);
+            EmployeeBusinessComponent employeeBo = new EmployeeBusinessComponent();
+            bool status = employeeBo.AddRecord(employee);
             if (status)
                 MessageBox.Show("employee record added successfully");
             else
@@ -57,11 +57,11 @@ namespace Implementation.View
 
         private void EmployeeEntryForm_Load(object sender, EventArgs e)
         {
-            DepartmentDataAccessObject departmentDao =
-                new DepartmentDataAccessObject();
-            var departments = departmentDao.GetAll();
+            DepartmentBusinessComponent departmentBo =
+                new DepartmentBusinessComponent();
+            var departments = departmentBo.GetRecords();
 
-            comboBoxDepartments.DataSource = departments.ToList<Department>();
+            comboBoxDepartments.DataSource = departments;
             comboBoxDepartments.DisplayMember = "DepartmentName";
         }
     }
