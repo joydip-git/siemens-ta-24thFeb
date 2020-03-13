@@ -1,8 +1,9 @@
 ﻿using Implementation.Contracts;
+using Implementation.DAL;
+using Implementation.Exceptions;
 using Implementation.Models;
 using System;
 using System.Collections.Generic;
-using Implementation.DAL;
 
 namespace Implementation.BL
 {
@@ -14,8 +15,19 @@ namespace Implementation.BL
             departmentDao = new DepartmentDataAccessObject();
         }
         public bool AddRecord(Department item)
-        {            
-            return departmentDao.Add(item);
+        {
+            try
+            {
+                return departmentDao.Add(item);
+            }
+            catch (DepartmentDaoException ex)
+            {
+                throw ex;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         public ICollection<Department> GetRecordById(int id)

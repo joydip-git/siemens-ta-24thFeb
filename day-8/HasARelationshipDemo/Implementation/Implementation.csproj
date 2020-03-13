@@ -52,10 +52,13 @@
     <Compile Include="Contracts\IDataAccess.cs" />
     <Compile Include="DAL\DepartmentDataAccessObject.cs" />
     <Compile Include="DAL\EmployeeDataAccessObject.cs" />
+    <Compile Include="Exceptions\DataNotAddedException.cs" />
+    <Compile Include="Exceptions\DepartmentDaoException.cs" />
     <Compile Include="IOC\DataAccessObjectProvider.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\EmployeeComparison.cs" />
     <Compile Include="Models\SortChoice.cs" />
+    <Compile Include="Utility\ErrorMessages.cs" />
     <Compile Include="View\DepartmentDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>

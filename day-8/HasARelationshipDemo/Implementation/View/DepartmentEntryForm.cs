@@ -1,5 +1,6 @@
 ﻿using Implementation.BL;
 using Implementation.Models;
+using Implementation.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,23 +44,35 @@ namespace Implementation.View
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(textBoxId.Text);
-            string name = textBoxName.Text;
-            //object initializer (C# 3.0 -2007)
-            Department department = new Department
+            try
             {
-                DepartmentId = id,
-                DepartmentName = name
-            };
-            DepartmentBusinessComponent departmentBo
-                = new DepartmentBusinessComponent();
+                int id = int.Parse(textBoxId.Text);
+                string name = textBoxName.Text;
+                //object initializer (C# 3.0 -2007)
+                Department department = new Department
+                {
+                    DepartmentId = id,
+                    DepartmentName = name
+                };
+                DepartmentBusinessComponent departmentBo
+                    = new DepartmentBusinessComponent();
 
-            bool status = departmentBo.AddRecord(department);
-            if (status)
-                MessageBox.Show("department record added");
-            else
-                MessageBox.Show("department record not added");
+                bool status = departmentBo.AddRecord(department);
+                if (status)
+                    MessageBox.Show("department record added");
+                else
+                    MessageBox.Show("department already exists");
+            }
+            catch (DepartmentDaoException ex)
+            {
+                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.InnerException.Message);
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
             Reset();
         }
         private void Reset()

@@ -10,7 +10,7 @@ namespace Implementation.Repository
 
         static DataRepository()
         {
-            departments = new HashSet<Department>();
+            //departments = new HashSet<Department>();
             employees = new HashSet<Employee>();
         }
         public static ICollection<Department> GetDepartments()
